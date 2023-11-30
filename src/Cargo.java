@@ -1,13 +1,13 @@
 public class Cargo {
-    private final String dimensions;  //    габариты;
+    private final Dimensions dimensions;  //    габариты;
     private final String mass; //    масса;
     private final String address; //    адрес доставки;
-    private final String turnOver; //    свойство — можно ли переворачивать;
+    private final boolean turnOver; //    свойство — можно ли переворачивать;
     private final String id; //    регистрационный номер (может содержать буквы);
     private final boolean fragile; //    является ли груз хрупким.
 
 
-    public Cargo(String dimensions, String mass, String address, String turnOver, String id, boolean fragile) {
+    public Cargo(Dimensions dimensions, String mass, String address,String id, boolean turnOver,  boolean fragile) {
         this.dimensions = dimensions;
         this.mass = mass;
         this.address = address;
@@ -17,39 +17,38 @@ public class Cargo {
     }
 
 
-    public Cargo setDimensions(String dimensions) {
-        return new Cargo(dimensions, mass, address, turnOver, id, fragile);
+    public Cargo setDimensions(Dimensions dimensions) {
+        return new Cargo(dimensions, mass, address, id, turnOver, fragile);
     }
 
     public Cargo setMass(String mass) {
-        return new Cargo(dimensions, mass, address, turnOver, id, fragile);
+        return new Cargo(dimensions, mass, address,  id, turnOver,fragile);
     }
 
     public Cargo setAddress(String address) {
-        return new Cargo(dimensions, mass, address, turnOver, id, fragile);
+        return new Cargo(dimensions, mass, address,  id,turnOver, fragile);
     }
 
-    public Cargo setTurnOver(String turnOver) {
-        return new Cargo(dimensions, mass, address, turnOver, id, fragile);
+    public Cargo setTurnOver(boolean turnOver) {
+        return new Cargo(dimensions, mass, address,  id, turnOver, fragile);
     }
 
     public Cargo setId(String id) {
-        return new Cargo(dimensions, mass, address, turnOver, id, fragile);
+        return new Cargo(dimensions, mass, address, id, turnOver,  fragile);
     }
 
     public Cargo setFragile(boolean fragile) {
-        return new Cargo(dimensions, mass, address, turnOver, id, fragile);
+        return new Cargo(dimensions, mass, address, id, turnOver,  fragile);
     }
 
 
     public Cargo() {
-        dimensions = "N/A";
+        dimensions = new Dimensions(1,2,3);
         mass = "N/A";
         address = "N/A";
-        turnOver = "N/A";
+        turnOver = false;
         id = "N/A";
         fragile = false;
     }
-
 
 }

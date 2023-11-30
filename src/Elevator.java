@@ -26,10 +26,10 @@ public class Elevator {
             while (floor != currentFloor) {
 
                 if (floor < currentFloor) {
-                    currentFloor -= 1;
+                    moveDown();
                     System.out.println("etag = " + currentFloor);
                 } else if (floor > currentFloor) {
-                    currentFloor += 1;
+                    moveUp();
                     System.out.println("etag = " + currentFloor);
                 }
             }
